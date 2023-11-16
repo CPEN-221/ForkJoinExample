@@ -53,7 +53,7 @@ public class SumThread extends Thread {
 	public static long sum(int[] arr) throws InterruptedException {
 		int len = arr.length;
 		long ans = 0;
-		int numThreads = 4;
+		int numThreads = 8;
 		SumThread[] ts = new SumThread[numThreads];
 		for (int i = 0; i < numThreads; i++) {// do parallel computations
 			ts[i] = new SumThread(arr, i * len / numThreads, (i + 1) * len / numThreads);
@@ -68,7 +68,7 @@ public class SumThread extends Thread {
 
 	public static void main(String[] args) {
 		Clock timingClock = Clock.systemUTC();
-		int len = 1024000;
+		int len = 1_024_000;
 		long ans = 0;
 		int[] arr = new int[len];
 		for (int i = 0; i < len; i++)

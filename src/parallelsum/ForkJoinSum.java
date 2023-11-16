@@ -6,7 +6,7 @@ import java.util.concurrent.RecursiveTask;
 
 public class ForkJoinSum extends RecursiveTask<Long> {
 
-	static private int SEQUENTIAL_CUTOFF = 128000;
+	static private int SEQUENTIAL_CUTOFF = 128_000;
 	static private Integer numThreads = 0;
 	private int lo;
 	private int hi;
@@ -46,7 +46,7 @@ public class ForkJoinSum extends RecursiveTask<Long> {
 	public static void main(String[] args) {
 		System.out.println("cores available: "+Runtime.getRuntime().availableProcessors());
 		Clock timingClock = Clock.systemUTC();
-		int len = 1024000;
+		int len = 1_024_000;
 		long ans = 0;
 		int[] arr = new int[len];
 		for (int i = 0; i < len; i++)
